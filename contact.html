@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Us</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Contact Us</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html"><img src="icons/home-icon.png" alt="Home" class="nav-icon"> Home</a></li>
+        <li><a href="ios.html"><img src="icons/ios-icon.png" alt="iOS" class="nav-icon"> iOS</a></li>
+        <li><a href="android.html"><img src="icons/android-icon.png" alt="Android" class="nav-icon"> Android</a></li>
+        <li><a href="contact.html"><img src="icons/contact-icon.png" alt="Contact Us" class="nav-icon"> Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Contact Us</h2>
+    <p>If you have any questions or feedback, please feel free to get in touch with us. We'd love to hear from you!</p>
+
+    <h3>Contact Information</h3>
+    <p>Email: contact@androidioscomparison.com</p>
+    <p>Phone: +968 12345678</p>
+
+    <h3>Contact Form</h3>
+    <p>Use the contact form below to send us a message:</p>
+
+    <form action="submit_form.php" method="POST" id="contact-form">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <input type="submit" id="submit-button" value="Submit">
+      </div>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 AndroidiOSComparison.com</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var form = document.getElementById("contact-form");
+
+      document.getElementById("submit-button").addEventListener("click", function(event) {
+        if (!form.checkValidity()) {
+          event.preventDefault(); // Prevent the form from submitting
+          alert("Please fill out all required fields before submitting the form.");
+        } else {
+          alert("Form submitted successfully! We'll get back to you soon.");
+          form.reset(); // Clear the form input fields
+        }
+      });
+    });
+  </script>
+</body>
+</html>
