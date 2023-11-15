@@ -1,39 +1,88 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-  <title>Android vs iOS Comparison</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Android vs iOS Comparison</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Mobile Operating System Android VS iOS</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html"><img src="icons/home-icon.png" alt="Home" class="nav-icon"> Home</a></li>
-        <li><a href="ios.html"><img src="icons/ios-icon.png" alt="iOS" class="nav-icon">iOS</a></li>
-        <li><a href="android.html"><img src="icons/android-icon.png" alt="Android" class="nav-icon">Android</a></li>
-        <li><a href="contact.html"><img src="icons/contact-icon.png" alt="Contact Us" class="nav-icon">Contact Us</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-  <h2>Welcome to our Android vs iOS Comparison Website!</h2>
-  <p>Explore the differences between the two most popular mobile operating systems, Android and iOS. Our website provides in-depth information and analysis to help you make informed decisions when choosing your next mobile device.</p>
+    <header>
+	<img src="icons/logo.jpg" alt="Website Logo" class="logo">
+	<a href="#" class="search-button" id="searchButton">
+            <img src="icons/search.png" alt="Search" class="search-icon">
+        </a>
+        <input type="text" id="searchInput" class="search-input" placeholder="Search" style="display: none;">
+        <h1>Mobile Operating System Android VS iOS</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html"><img src="icons/home-icon.png" alt="Home" class="nav-icon"> Home</a></li>
+                <li><a href="ios.html"><img src="icons/ios-icon.png" alt="iOS" class="nav-icon">iOS</a></li>
+                <li><a href="android.html"><img src="icons/android-icon.png" alt="Android" class="nav-icon">Android</a></li>
+                <li><a href="contact.html"><img src="icons/contact-icon.png" alt="Contact Us" class="nav-icon">Contact Us</a></li>
+            </ul>
+        </nav>
 
-  <h3>Key Features of Our Website:</h3>
-  <ul>
-    <li>Side-by-side comparison of Android and iOS features and capabilities.</li>
-    <li>Expert reviews and recommendations for both platforms.</li>
-    <li>Latest news and updates in the world of mobile technology.</li>
-  </ul>
+    </header>
+    <main>
+        <h2>Welcome to our Android vs iOS Comparison Website!</h2>
+        <p>Explore the differences between the two most popular mobile operating systems, Android and iOS. Our website provides in-depth information and analysis to help you make informed decisions when choosing your next mobile device.</p>
 
-  <p>Whether you're a long-time Android user or considering making the switch to iOS, we've got you covered. Our goal is to help you make the right choice for your mobile needs.</p>
-<img src="images/androidvsios.png" alt="Android Customization">
-</main>
+        <h3>Key Features of Our Website:</h3>
+        <ul>
+            <li>Side-by-side comparison of Android and iOS features and capabilities.</li>
+            <li>Expert reviews and recommendations for both platforms.</li>
+            <li>Latest news and updates in the world of mobile technology.</li>
+        </ul>
 
-  <footer>
-    <p>&copy; 2023 AndroidiOSComparison.com</p>
-  </footer>
+        <p>Whether you're a long-time Android user or considering making the switch to iOS, we've got you covered. Our goal is to help you make the right choice for your mobile needs.</p>
+
+        <video id="video" controls width="640" height="360" class="video">
+            <source src="images/iOSvsAndroid.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="button-container">
+            <button id="playButton" >Play</button>
+            <button id="pauseButton">Pause</button>
+            <button id="rewindButton">Rewind</button>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 AndroidiOSComparison.com</p>
+    </footer>
+    <script>
+        const video = document.getElementById("video");
+        const playButton = document.getElementById("playButton");
+        const pauseButton = document.getElementById("pauseButton");
+        const rewindButton = document.getElementById("rewindButton");
+
+        playButton.addEventListener("click", () => {
+            video.play();
+        });
+
+        pauseButton.addEventListener("click", () => {
+            video.pause();
+        });
+
+        rewindButton.addEventListener("click", () => {
+            video.currentTime = 0;
+        });
+document.getElementById("searchButton").addEventListener("click", function(event) {
+    event.preventDefault();
+    const searchInput = document.getElementById("searchInput");
+    
+    if (searchInput.style.display === "none") {
+        searchInput.style.display = "inline-block";
+        searchInput.focus(); // Focus on the input box when shown
+    } else {
+        searchInput.style.display = "none";
+    }
+});
+
+    </script>
+
 </body>
 </html>
